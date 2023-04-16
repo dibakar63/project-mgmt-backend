@@ -5,6 +5,7 @@ const connectDB=require('./config/db')
 require('dotenv').config();
 const {graphqlHTTP} =require('express-graphql');
 const schema=require('./schema/schema');
+const path=require("path");
 const port=process.env.PORT || 5000; 
 
 const app=express();
@@ -13,6 +14,10 @@ const app=express();
 
 connectDB();
 app.use(cors());
+app.get('/',(req,res)=>{
+res.setHeader("Acess-Control,Allow-Credentials","true");
+    res.send('Api is running');
+})
 app.use('/graphql',graphqlHTTP({
     schema,
     graphiql:process.env.NODE_ENV='developement'
