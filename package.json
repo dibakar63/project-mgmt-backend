@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "node server/index.js"
+    
+    
   },
   "keywords": [],
   "author": "",
@@ -22,3 +24,4 @@
     "nodemon": "^2.0.22"
   }
 }
+
